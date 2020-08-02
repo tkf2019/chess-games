@@ -90,7 +90,8 @@ WSGI_APPLICATION = 'server.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
+'''
+电脑没装MySQL，把它注释掉
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -101,7 +102,14 @@ DATABASES = {
         'PORT': '3306'
     }
 }
-
+下面是用默认的sqlite的设置
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
