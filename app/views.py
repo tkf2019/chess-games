@@ -1,18 +1,20 @@
 from django.http import JsonResponse
 from .models import User
 from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 from email.header import Header
-import json, smtplib, sys
+import json, smtplib, sys, re
 
 sys.path.append('..')
 from server.settings import MAIL_SENDER, MAIL_SENDER_PASSWD
 
-testcontent = "您好，这是一封测试邮件。"
+testcontent = "<h1><center>您好，这是一封测试邮件。</center></h1>\n\
+    <p><center><big>请点击<a href='https://www.bing.com'>此链接</a>完成验证。</big></center></p>"
 testtitle = "测试邮件"
 
 
 def send_test_mails(receiver=MAIL_SENDER):
-    msg = MIMEText(testcontent, "plain", 'utf-8')
+    msg = MIMEText(testcontent, "html", 'utf-8')
     msg["Subject"] = Header(testtitle, 'utf-8')
     msg["From"] = MAIL_SENDER
     msg["To"] = receiver
@@ -28,6 +30,12 @@ def send_test_mails(receiver=MAIL_SENDER):
     server.quit()
 
 
+# 网上随便找的邮箱正则
+def is_mail(mail):
+    str=r'^[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){0,4}@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+){0,4}$'
+    return (re.match(str,mail))
+
+
 def register(request):
     status = ''
     if request.method == 'POST':
@@ -36,15 +44,16 @@ def register(request):
         user = User.objects.filter(username=username)
         if user:
             status = 'existed'
-        else:
+        elif is_mail(data['email']):
             user = User.objects.create(
                 username=username,
                 password=data['password'],
                 email=data['email']
             )
             send_test_mails()# data['email'])
-            # 这里应该添加一下验证邮箱是否有效的逻辑
             user.save()
+        else:
+            status = "unavailable"
         return JsonResponse({'status': status})
 
 
