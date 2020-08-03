@@ -150,3 +150,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'client/dist/static')]
 
+
+# 发送邮件使用的邮箱和授权码
+
+MAIL_SENDER = "2290038501@qq.com"
+MAIL_SENDER_PASSWD = "（填写自己的授权码）"
