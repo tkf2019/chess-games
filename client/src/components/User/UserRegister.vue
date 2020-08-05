@@ -13,18 +13,16 @@
         <div v-for="(value, key) in errorForm" :key="key">
           <user-input :placeHolder="key"
             @input="catchInput"></user-input>
-          <div v-for="err in value" :key="err" id="err">
+          <div v-for="err in value" :key="err" id="error">
             {{err}}
           </div>
         </div>
 
-        <button class="button"
-          @click="routeJump('back')">
+        <button @click="routeJump('back')">
           <div>⬅ back</div>
         </button>
 
-        <button class="button"
-          @click="create(registerForm)">
+        <button @click="create(registerForm)">
           <div>Submit</div>
         </button>
       </template>
@@ -34,9 +32,7 @@
           Registration Complete. You shuold receive an email
           soon with instructions on how to activate your account.
         </div>
-        <button class="button"
-          @click="routeJump('login')"
-          disabled="disabled">
+        <button @click="routeJump('login')">
           Login Now
         </button>
       </template>
@@ -156,29 +152,5 @@ export default {
 </script>
 
 <style lang="scss">
-  #register-form {
-    h1 {
-      margin-bottom: 20px;
-      font: {
-        size: 36px;
-      }
-    }
-    button {
-      width: 100px;
-      height: 30px;
-      color: white;
-      background-color: #00000090;
-      cursor: pointer;
-      outline: none;
-      margin: 30px 10px 0;
-      border-radius: 5px;
-      font: {
-        size: 18px;
-        family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-      }
-    }
-    #err {
-      color: red;
-    }
-  }
+
 </style>

@@ -1,0 +1,17 @@
+button {
+  width: 100px;
+  outline: none;
+  color: white;
+  background-color: #00000090;
+  cursor: pointer;
+  border-radius: 5px;
+  border-style: groove;
+  font: {
+    weight: 600;
+    size: 18px;
+    family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  }
+  &:hover {
+    background-image: linear-gradient(rgb(32, 29, 29), rgb(83, 78, 78));
+  }
+}

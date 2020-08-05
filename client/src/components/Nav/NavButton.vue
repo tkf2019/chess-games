@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div id="nav-button">
     <div class="menuBlock" @click="changeMenu">
       <div :class="changeStyle">
         <span></span>
@@ -37,7 +37,7 @@ export default {
     width: 40px;
     height: 40px;
     display: block;
-    background-color: black;
+    background-color: #00000090;
     border-radius: 50%;
     box-shadow: 0 0 10px 5px #ccc;
     span {

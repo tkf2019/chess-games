@@ -5,17 +5,12 @@
 </template>
 
 <script>
-
 export default {
-  name: 'App',
-  data() {
-    return {
-      
-    }
-  }
+  name: 'App'
 }
 </script>
 
 <style lang="scss">
-  
+  @import '@/assets/css/button.scss';
+  @import '@/assets/css/error.scss';
 </style>

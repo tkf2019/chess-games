@@ -4,14 +4,14 @@
       <div id="text">
         {{username}}
       </div>
-      <button class="nav-login" @click="logoutClick">
+      <button @click="logoutClick">
         Logout
       </button>
     </template>
     
     <template v-else>
       <img src="@/assets/images/icon4.png">
-      <button class="nav-login" @click="loginClick">
+      <button @click="loginClick">
           Login
       </button>
     </template>
@@ -58,33 +58,20 @@ export default {
   #nav-type {
     position: absolute;
     right: 0;
+    margin: 0;
+    padding: 0;
     display: flex;
-    .nav-login {
-      right: 0;
-      background-color: black;;
-      width: 100px;
+    button {
       height: 60px;
-      margin-left: 20px;
-      cursor: pointer;
-      color: white;
-      border-radius: 5px;
-      outline: none;
-      font: {
-        weight: 600;
-        size: 16px;
-        family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-      }
-      &:hover {
-        background-image: linear-gradient(rgb(32, 29, 29), rgb(83, 78, 78));
-        color: white;
-      }
-      
+      margin-left: 20px;    
     }
     #text {
-      margin-top: 20px;
+      margin-top: 14px;
       font: {
-        size: 18px;
-      }
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        font-weight: 600;
+        size: 24px;
+      } 
       color: white;
     }
   }

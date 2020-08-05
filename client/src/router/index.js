@@ -22,6 +22,8 @@ const User = import('@/pages/User')
 const UserLogin = import('@/components/User/UserLogin')
 const UserRegister = import('@/components/User/UserRegister')
 
+const ChineseChessBoard = import('@/components/ChineseChess/Board') 
+
 const requireAuthenticated = (to, from, next) => {
   store.dispatch('auth/initialize')
     .then(() => {
@@ -90,6 +92,10 @@ const routes = [
     name: 'Lost',
     path: '*',
     component: () => Lost
+  }, {
+    name: 'ChineseChess',
+    path: '/games/chinese-chess',
+    component: () => ChineseChessBoard
   }
 ]
 

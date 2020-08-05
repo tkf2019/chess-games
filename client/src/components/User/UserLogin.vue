@@ -13,7 +13,7 @@
       <div v-for="(value, key) in errorForm" :key="key">
         <user-input :placeHolder="key"
           @input="catchInput"></user-input>
-        <div v-for="err in value" :key="err" id="err">
+        <div v-for="err in value" :key="err" id="error">
           {{err}}
         </div>
       </div>
@@ -121,28 +121,5 @@ export default {
 </script>
 
 <style lang="scss">
-  #login-form {
-    h1 {
-      margin-bottom: 40px;
-      font-size: 36px;
-      background: none;
-    }
-    button {
-      width: 100px;
-      height: 30px;
-      color: white;
-      background-color: #00000090;
-      cursor: pointer;
-      outline: none;
-      margin: 60px 10px 0;
-      border-radius: 5px;
-      font: {
-        size: 18px;
-        family: Arial, "Helvetica Neue", Helvetica, sans-serif;
-      }
-    }
-    #err {
-      color: red;
-    }
-  }
+
 </style>

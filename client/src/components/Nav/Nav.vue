@@ -1,7 +1,7 @@
 <template>
   <div id="nav-container">
 
-    <img src="@/assets/images/icon3.png">
+    <img src="@/assets/images/icon2.png">
 
     <div id="nav-title">
       Chess Games
@@ -85,7 +85,7 @@ export default {
     overflow: auto;
     position: fixed;
     display: flex;
-    background-image: linear-gradient(#000, rgb(52, 47, 47));
+    background: #00000060;
     border: none;
     box-shadow: 1px 1px 10px grey;
     width: 100%;

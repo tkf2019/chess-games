@@ -48,17 +48,21 @@ export default {
 </script>
 
 <style lang="scss">
-  
   #user-login {
-    position: fixed;
+    position: absolute;
     width: 100%;
     min-width: 1300px;
-    height: 100%;
+    height: 900px;
+    margin: 0;
+    padding: 0;
     top: 0;
     left: 0;
-    background-size: 100% auto;
-    background: url('../assets/images/15.jpg') no-repeat;
-    color: white;
+    z-index: -1;
+    border: none;
+    background-image: url('../assets/images/15.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: auto;
     #login-box {
       width: 30%;
       height: auto;
@@ -68,8 +72,17 @@ export default {
       padding: 20px 50px;
       border-radius: 5%;
       box-shadow: 1px 1px 10px #000;
+      color: white;
       font: {
         font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+      }
+      h1 {
+        margin-bottom: 20px;
+        font-size: 36px;
+      }
+      button {
+        height: 30px;
+        margin: 30px 10px 0;
       }
     }
   }
