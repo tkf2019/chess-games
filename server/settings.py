@@ -90,7 +90,8 @@ WSGI_APPLICATION = 'server.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
+'''
+电脑没装MySQL，把它注释掉
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -101,7 +102,14 @@ DATABASES = {
         'PORT': '3306'
     }
 }
-
+下面是用默认的sqlite的设置
+'''
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': 'mydatabase',
+    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -142,3 +150,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'client/dist/static')]
 
+
+# 发送邮件使用的邮箱和授权码
+
+MAIL_SENDER = "2290038501@qq.com"
+MAIL_SENDER_PASSWD = "（填写自己的授权码）"
